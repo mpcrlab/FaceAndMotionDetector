@@ -43,6 +43,9 @@ def motionDetector(minArea=None, adjustRate=None,delay=None):
         k = cv2.waitKey(delay) & 0xFF
         if k == ord("q"):
             break
+        elif k == ord("c"):
+            time_str = str(time.time()).replace('.', '_')
+            cv2.imwrite(time_str + ".png", frame)
     del(camera)
     cv2.destroyAllWindows()
 
